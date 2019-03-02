@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9D960148-1D3B-4FDE-8A0E-D20A3D9BE2C5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ShopWPF</RootNamespace>
-    <AssemblyName>ShopWPF</AssemblyName>
+    <RootNamespace>RemotingWPFClient</RootNamespace>
+    <AssemblyName>RemotingWPFClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,11 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Org.Mql.Ado">
-      <HintPath>..\Org.Mql.Ado\bin\Debug\Org.Mql.Ado.dll</HintPath>
+    <Reference Include="RemotingLibrary">
+      <HintPath>..\RemotingLibrary\bin\Debug\RemotingLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -73,7 +74,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

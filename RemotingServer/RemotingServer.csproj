@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Org.Mql.Ado, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Org.Mql.Ado\bin\Debug\Org.Mql.Ado.dll</HintPath>
+    </Reference>
     <Reference Include="RemotingLibrary">
       <HintPath>..\RemotingLibrary\bin\Debug\RemotingLibrary.dll</HintPath>
     </Reference>
@@ -47,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Mql.Ado", "Org.Mql.Ado\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopWindowsForm", "ShopWindowsForm\ShopWindowsForm.csproj", "{6DED2591-3563-48AD-8849-3DF441574BDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopWPF", "ShopWPF\ShopWPF.csproj", "{9D960148-1D3B-4FDE-8A0E-D20A3D9BE2C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotingWPFClient", "ShopWPF\RemotingWPFClient.csproj", "{9D960148-1D3B-4FDE-8A0E-D20A3D9BE2C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotingServer", "RemotingServer\RemotingServer.csproj", "{C50A5666-9B17-4A1E-A2C0-EBF1CE5CCF58}"
 EndProject

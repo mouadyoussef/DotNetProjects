@@ -1,12 +1,8 @@
-﻿using RemotingLibrary.Dao;
+﻿using RemotingServer.Dao;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RemotingServer
 {
@@ -17,13 +13,13 @@ namespace RemotingServer
             try
             {
                 //select channel to communicate
-                TcpChannel chan = new TcpChannel(8090);
-                ChannelServices.RegisterChannel(chan, false);
+                TcpChannel channel = new TcpChannel(8090);
+                ChannelServices.RegisterChannel(channel, false);
                 //register channel
                 //register remote object
                 RemotingConfiguration.RegisterWellKnownServiceType(
-                    typeof(ProductDao),
-                    "Products",
+                    typeof(ProductDao), // ProductDao.class
+                    "Products", // Url
                     WellKnownObjectMode.SingleCall
                 );
                 //inform console

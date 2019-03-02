@@ -1,38 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Org.Mql.Ado
 {
     public class SqlDataBase
-    { // Connection Object
+    {
         public SqlConnection Cnx { get; private set; }
 
-        // Variable
         private string _connectionString;
-        //Property of the variable _connectionString.
         public string ConnectionString {
-            //Getter
             get { return _connectionString; }
-            //Setter
             set {
                 _connectionString = value;
-                //Instance of connection object
                 Cnx = new SqlConnection(_connectionString);
                 Cnx.Open();
-                Console.WriteLine("===> Connection Started.");
             }
         }
-
         public SqlDataBase(string connectionString)
         {
             ConnectionString = connectionString;
         }
-
         public void Disconnect()
         {
             if (Cnx.State == ConnectionState.Open)
@@ -48,6 +36,23 @@ namespace Org.Mql.Ado
             adapter.Fill(table);
 
             return table;
+        }
+
+        public DataRow FindById(string tableName, int id)
+        {
+            string req = $"SELECT * FROM {tableName} WHERE id = {id}";
+            SqlCommand cmd = new SqlCommand(req, Cnx);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable(tableName);
+            adapter.Fill(table);
+
+            return table.Rows[0];
+        }
+        
+        public int ExecuteUpdate(string req)
+        {
+            SqlCommand cmd = new SqlCommand(req, Cnx);
+            return cmd.ExecuteNonQuery();
         }
 
         public int Insert(string tableName, Dictionary<string, object> data)
@@ -72,10 +77,5 @@ namespace Org.Mql.Ado
             return ExecuteUpdate(req);
         }
 
-        public int ExecuteUpdate(string req)
-        {
-            SqlCommand cmd = new SqlCommand(req, Cnx);
-            return cmd.ExecuteNonQuery();
-        }
     }
 }

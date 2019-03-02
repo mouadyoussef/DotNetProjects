@@ -16,9 +16,10 @@ namespace ShopWindowsForm
         public MainForm()
         {
             InitializeComponent();
-            Data.Sql = new SqlDataBase(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Shop;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            Data.Sql = new SqlDataBase(
+                @"Data Source=(localdb)\MSSQLLocalDB;Initial 
+                    Catalog=Shop;Integrated Security=True;");
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             DataTable dataTable = Data.Sql.Select("Products");

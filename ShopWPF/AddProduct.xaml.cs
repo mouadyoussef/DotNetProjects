@@ -31,7 +31,7 @@ namespace ShopWPF
             data.Add("Price", tbPrice.Text);
             data.Add("Description", tbDescription.Text);
             data.Add("Quantity", tbQuantity.Text);
-            Data.Sql.Insert("Products", data);
+            //Data.Sql.Insert("Products", data);
             this.Close();
             MessageBox.Show("Product inserted ");
         }
