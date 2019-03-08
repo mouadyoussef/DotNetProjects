@@ -1,5 +1,7 @@
 ﻿using RemotingServer.Dao;
 using System;
+using System.Collections;
+using System.Net;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
@@ -24,12 +26,13 @@ namespace RemotingServer
                 );
                 //inform console
                 Console.WriteLine("Server Activated ...");
-                Console.ReadKey();
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error : " + ex.Message);
             }
+            Console.ReadKey();
         }
     }
 }

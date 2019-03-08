@@ -19,6 +19,7 @@ namespace ShopWindowsForm
             Data.Sql = new SqlDataBase(
                 @"Data Source=(localdb)\MSSQLLocalDB;Initial 
                     Catalog=Shop;Integrated Security=True;");
+            this.Load += MainForm_Load;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {

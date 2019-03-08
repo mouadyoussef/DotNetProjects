@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C50A5666-9B17-4A1E-A2C0-EBF1CE5CCF58}</ProjectGuid>
+    <ProjectGuid>{7DD01BAD-0D10-45EE-AE67-20CBA561DC41}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RemotingServer</RootNamespace>
-    <AssemblyName>RemotingServer</AssemblyName>
+    <RootNamespace>EFDemo</RootNamespace>
+    <AssemblyName>EFDemo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,17 +39,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Org.Mql.Ado, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Org.Mql.Ado\bin\Debug\Org.Mql.Ado.dll</HintPath>
-    </Reference>
-    <Reference Include="RemotingLibrary">
-      <HintPath>..\RemotingLibrary\bin\Debug\RemotingLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,13 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dao\ProductDao.cs" />
+    <Compile Include="Migrations\201903080848593_InitialModel.cs" />
+    <Compile Include="Migrations\201903080848593_InitialModel.Designer.cs">
+      <DependentUpon>201903080848593_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903080848593_InitialModel.resx">
+      <DependentUpon>201903080848593_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

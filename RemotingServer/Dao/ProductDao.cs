@@ -11,6 +11,11 @@ namespace RemotingServer.Dao
     {
         SqlDataBase sql = new SqlDataBase(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Shop;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
+        public ProductDao()
+        {
+            Console.WriteLine("==> New connection.");
+        }
+
         public Product FindById(int id)
         {
             DataRow item = sql.FindById("Products", id);

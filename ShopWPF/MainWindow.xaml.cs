@@ -29,14 +29,15 @@ namespace ShopWPF
             {
                 TcpClientChannel clientChannel = new TcpClientChannel();
                 ChannelServices.RegisterChannel(clientChannel, false);
-                IProductDao productDao = (IProductDao)Activator.GetObject(typeof(IProductDao), $"tcp://{tbHost.Text}:8090/Products");
-                Console.WriteLine("Product Info : ");
+                IProductDao productDao = (IProductDao)Activator.GetObject(
+                    typeof(IProductDao), $"tcp://{tbHost.Text}:8090/Products");
                 List<Product> products = productDao.GetAll();
                 productsGrid.DataContext = products;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error : \n{ex.Message}", "Connecting Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error : \n{ex.Message}", "Connecting Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
