@@ -13,8 +13,8 @@ namespace AspNetDemo.Dao
         void Update(Product product);
         Product Delete(int id);
         Product Get(int id);
-        IList<Product> GetProducts();
-        IList<Product> GetProducts(string name);
+        IQueryable<Product> GetProducts();
+        IQueryable<Product> GetProducts(string name);
         IList<Product> GetByMaxPrice(double price);
     }
 }

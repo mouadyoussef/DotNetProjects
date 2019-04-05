@@ -42,6 +42,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +52,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BiblioModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblioModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BiblioModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BiblioModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblioModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs">
+      <DependentUpon>BiblioModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201903080848593_InitialModel.cs" />
     <Compile Include="Migrations\201903080848593_InitialModel.Designer.cs">
       <DependentUpon>201903080848593_InitialModel.cs</DependentUpon>
@@ -58,15 +78,40 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publisher.cs">
+      <DependentUpon>BiblioModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="BiblioModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BiblioModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BiblioModel.edmx.diagram">
+      <DependentUpon>BiblioModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903080848593_InitialModel.resx">
       <DependentUpon>201903080848593_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BiblioModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BiblioModel.edmx</DependentUpon>
+      <LastGenOutput>BiblioModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BiblioModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BiblioModel.edmx</DependentUpon>
+      <LastGenOutput>BiblioModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

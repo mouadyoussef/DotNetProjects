@@ -30,29 +30,29 @@ namespace AspNetDemo.Dao
             return product;
         }
 
-        public Product Get(int id)
-        {
-            return _context.Products.Find(id);
-        }
-
-        public IList<Product> GetProducts()
-        {
-            return _context.Products.ToList();
-        }
-
-        public IList<Product> GetProducts(string name)
-        {
-            var result = from p in _context.Products
-                         where p.Name.Contains(name)
-                         select p;
-            return result.ToList();
-        }
-
         public void Update(Product product)
         {
             _context.Products.Add(product);
             _context.Entry(product).State = EntityState.Modified;
             _context.SaveChanges();
+        }
+
+        public Product Get(int id)
+        {
+            return _context.Products.Find(id);
+        }
+
+        public IQueryable<Product> GetProducts()
+        {
+            return _context.Products;
+        }
+
+        public IQueryable<Product> GetProducts(string name)
+        {
+            var result = from p in _context.Products
+                         where p.Name.Contains(name)
+                         select p;
+            return result;
         }
 
         public IList<Product> GetByMaxPrice(double price)

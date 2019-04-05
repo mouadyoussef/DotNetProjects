@@ -20,7 +20,8 @@
                     <asp:GridView runat="server" ID="ProductsGrid"
                         ItemType="AspNetDemo.Models.Product" DataKeyNames="Id"
                         SelectMethod="productsGrid_GetData"
-                        AutoGenerateColumns="false" CssClass="table table-bordered table-stripped">
+                        AutoGenerateColumns="False"
+                        AllowPaging="True" AllowSorting="True" AutoGenerateEditButton="True">
                         <Columns>
                             <asp:DynamicField DataField="Id" />
                             <asp:DynamicField DataField="Name" />

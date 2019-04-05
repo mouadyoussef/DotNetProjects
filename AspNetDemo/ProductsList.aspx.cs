@@ -19,11 +19,11 @@ namespace AspNetDemo
 
         protected void Test_Click(object sender, EventArgs e)
         {
-            IList<Product> products = _productDao.GetProducts(tbTest.Text);
+            IQueryable<Product> products = _productDao.GetProducts(tbTest.Text);
             Application["products"] = products;
         }
 
-        public IList<Product> productsGrid_GetData()
+        public IQueryable<Product> productsGrid_GetData()
         {
             return _productDao.GetProducts();
         }

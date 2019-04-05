@@ -7,9 +7,9 @@ namespace AspNetDemo.Migrations
     {
         public override void Up()
         {
-            //AddColumn("dbo.Products", "Label", c => c.String());
-            //Sql("UPDATE dbo.Products set Label = Name");
-            //DropColumn("dbo.Products", "Name");
+            //AddColumn("dbo.Products", "Name", c => c.String());
+            //Sql("UPDATE dbo.Products set Name = Label");
+            //DropColumn("dbo.Products", "Label");
             RenameColumn("dbo.Products", "Label", "Name");
         }
 

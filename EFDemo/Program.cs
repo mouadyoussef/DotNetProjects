@@ -12,6 +12,24 @@ namespace EFDemo
     {
         static void Main(string[] args)
         {
+            var context = new BiblioEntities();
+            Publisher publisher = new Publisher() {
+                Name = "Microsoft",
+                Company = "Microsoft"
+            };
+            Book book = new Book() {
+                ISBN = "1-5556-16196",
+                Title = "Entity Framework",
+                YearPublished = 2019,
+                Publisher = publisher
+            };
+            context.Publishers.Add(publisher);
+            context.Books.Add(book);
+            context.SaveChanges();
+        }
+
+        static void Main1(string[] args)
+        {
             ProductsContext context = new ProductsContext();
             Product product = new Product() { Label = "Product 9", Description = "Desc 4", Price = 1200, Quantity = 30 };
             context.Products.Add(product);

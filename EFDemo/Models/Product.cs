@@ -2,7 +2,6 @@
 
 namespace EFDemo.Models
 {
-    [Serializable]
     public class Product
     {
         public int Id { get; set; }
@@ -13,7 +12,8 @@ namespace EFDemo.Models
 
         public Product() { }
 
-        public Product(int id, string label, double price, string description, int quantity)
+        public Product(int id, string label, double price, 
+            string description, int quantity)
         {
             Id = id;
             Label = label;

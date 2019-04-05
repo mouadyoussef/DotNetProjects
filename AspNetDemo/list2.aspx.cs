@@ -14,15 +14,16 @@ namespace AspNetDemo
         private IProductDao _productDao = new ProductDao();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Application["products"] = _productDao.GetProducts();
+            Application["products"] = _productDao.GetProducts().ToList();
         }
 
         protected void Test_Click(object sender, EventArgs e)
         {
-            IList<Product> products = _productDao.GetProducts(tbTest.Text);
+            IList<Product> products = _productDao.GetProducts(tbTest.Text).ToList();
             Application["products"] = products;
         }
-        public IList<Product> productsGrid_GetData()
+
+        public IQueryable<Product> productsGrid_GetData()
         {
             return _productDao.GetProducts();
         }
