@@ -17,10 +17,12 @@ namespace Org.Mql.Ado
                 Cnx.Open();
             }
         }
+
         public SqlDataBase(string connectionString)
         {
             ConnectionString = connectionString;
         }
+
         public void Disconnect()
         {
             if (Cnx.State == ConnectionState.Open)
@@ -48,7 +50,7 @@ namespace Org.Mql.Ado
 
             return table.Rows[0];
         }
-        
+
         public int ExecuteUpdate(string req)
         {
             SqlCommand cmd = new SqlCommand(req, Cnx);
@@ -76,6 +78,5 @@ namespace Org.Mql.Ado
             string req = $"DELETE FROM {tableName} WHERE {key} = {value}";
             return ExecuteUpdate(req);
         }
-
     }
 }

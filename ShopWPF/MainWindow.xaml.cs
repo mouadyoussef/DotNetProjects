@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Channels;
 using System.Collections.Generic;
 using RemotingLibrary.Models;
 using System.Runtime.Remoting.Channels.Tcp;
+using RemotingWPFClient;
 
 namespace ShopWPF
 {
