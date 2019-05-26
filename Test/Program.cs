@@ -8,6 +8,15 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            Fraction a = new Fraction(1, 2);
+            Fraction b = new Fraction(3, 7);
+            Fraction x = a + b;
+            double result = (double)x;
+            Console.WriteLine(x.ToString());
+            Console.WriteLine(result);
+
+            Console.ReadKey();
+
             SqlConnection cnx = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Biblio;Integrated Security=True;");
             SqlDataAdapter adapter = new SqlDataAdapter("select * from Books", cnx);
             DataSet ds = new DataSet();

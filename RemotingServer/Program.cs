@@ -26,7 +26,6 @@ namespace RemotingServer
                 );
                 //inform console
                 Console.WriteLine("Server Activated ...");
-
             }
             catch (Exception ex)
             {

@@ -13,7 +13,8 @@ namespace RemotingLibrary.Models
 
         public Product() { }
 
-        public Product(int id, string label, double price, string description, int quantity)
+        public Product(int id, string label, double price, 
+            string description, int quantity)
         {
             Id = id;
             Label = label;
